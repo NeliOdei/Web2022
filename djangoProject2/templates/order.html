@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Рецепт{{ data.id }}{% endblock %}
+
+{% block content %}
+    <div>Информация о {{ data.id }} рецепте</div>
+        {% for descr in data.description %}
+            {% if data.id == descr.id %}
+            <li>{{ descr.title }}</li>
+            {% endif %}
+        {% empty %}
+            <li>Список пуст</li>
+        {% endfor %}
+{% endblock %}
