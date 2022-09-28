@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+ {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/examp.css' %}">
+
+</head>
+<body>
+{% block content %}
+    <div>Информация о пользователе: {{ data.Users.Nickname }} </div>
+    <div>ФИО: {{ data.Users.Name }} </div>
+    <div>Дата рождения: {{ data.Users.Birth_date }} </div>
+    <div>Моб.телефон: {{ data.Users.Phone }} </div>
+    <div>E-mail: {{ data.Users.E_mail }} </div>
+    <ul>
+     {% for m in data.Recipes %}
+         <li><a href="{% url 'recipes_url' m.id %}">{{ m.Recipe_Name }}</a></li>
+    {%  endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>

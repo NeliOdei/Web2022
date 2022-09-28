@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% block content %}
+    <div>Информация о рецепте: {{ data.Recipe.Recipe_Name }} </div>
+     <div>Категория: {{ data.Recipe.Category}} </div>
+    <div>Сложность приготовления: {{ data.Recipe.Level}} </div>
+    <div> {{ data.Recipe.Descr}} </div>
+
+
+
+{% endblock %}
+</body>
+</html>

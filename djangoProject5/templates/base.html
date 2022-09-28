@@ -1,0 +1,21 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/examp.css' %}">
+    <div>Книга рецептов</div>
+</head>
+<body>
+<div></div>
+
+<ul>
+{% for m in data.Users %}
+    <li><a href="{% url 'users_url' m.id %}">{{ m.Nickname }}</a> </li>
+{% endfor %}
+</ul>
+    {% block content %}{% endblock %}
+</body>
+</html>
